@@ -113,6 +113,12 @@ public class DataStorage {
         samples8 = new ArrayList<DataSample>(10000);
         samples9 = new ArrayList<DataSample>(10000);
         samples10 = new ArrayList<DataSample>(10000);
+        samples11 = new ArrayList<DataSample>(10000);
+        samples12 = new ArrayList<DataSample>(10000);
+        samples13 = new ArrayList<DataSample>(10000);
+        samples14 = new ArrayList<DataSample>(10000);
+        samples15 = new ArrayList<DataSample>(10000);
+        samples16 = new ArrayList<DataSample>(10000);
     }
 
     public static boolean AddSample(long l, int i) {
@@ -148,6 +154,66 @@ public class DataStorage {
     public static boolean AddWordIndex(long l, int i) {
         if (instance != null) {
             instance.add8(l, i);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean AddYSample(long l, int i) {
+        if (instance != null) {
+            instance.add11(l, i);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean AddUSample(long l, int i) {
+        if (instance != null) {
+            instance.add12(l, i);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean AddVSample(long l, int i) {
+        if (instance != null) {
+            instance.add13(l, i);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean AddRSample(long l, int i) {
+        if (instance != null) {
+            instance.add14(l, i);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean AddGSample(long l, int i) {
+        if (instance != null) {
+            instance.add15(l, i);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean AddBSample(long l, int i) {
+        if (instance != null) {
+            instance.add16(l, i);
 
             return true;
         }
@@ -312,6 +378,48 @@ public class DataStorage {
         }
     }
 
+    public void add11(long l, int i) {
+        if (samples11 != null) {
+            DataSample sample11 = new DataSample(l, i);
+            samples11.add(sample11);
+        }
+    }
+
+    public void add12(long l, int i) {
+        if (samples12 != null) {
+            DataSample sample12 = new DataSample(l, i);
+            samples12.add(sample12);
+        }
+    }
+
+    public void add13(long l, int i) {
+        if (samples13 != null) {
+            DataSample sample13 = new DataSample(l, i);
+            samples13.add(sample13);
+        }
+    }
+
+    public void add14(long l, int i) {
+        if (samples14 != null) {
+            DataSample sample14 = new DataSample(l, i);
+            samples14.add(sample14);
+        }
+    }
+
+    public void add15(long l, int i) {
+        if (samples15 != null) {
+            DataSample sample15 = new DataSample(l, i);
+            samples15.add(sample15);
+        }
+    }
+
+    public void add16(long l, int i) {
+        if (samples16 != null) {
+            DataSample sample16 = new DataSample(l, i);
+            samples16.add(sample16);
+        }
+    }
+
 
     public boolean delete(long l, int i) {
         boolean result = false;
@@ -404,6 +512,12 @@ public class DataStorage {
         String filename8 = "LensCover.csv";
         String filename9 = "LensUncover.csv";
         String filename10 = "WordIndex.csv";
+        String filename11 = "yData.csv";
+        String filename12 = "uData.csv";
+        String filename13 = "vData.csv";
+        String filename14 = "rData.csv";
+        String filename15 = "gData.csv";
+        String filename16 = "bData.csv";
 
         try {
             OutputStreamWriter outputstreamwriter;
@@ -583,6 +697,90 @@ public class DataStorage {
             }
         }
 
+        if (samples11 != null && samples11.size() != 0) {
+            File file11 = new File(dir, filename11);
+
+            try {
+                OutputStreamWriter outputstreamwriter = new OutputStreamWriter(new FileOutputStream(file11, true));
+
+                outputstreamwriter.write(DataSample.toCSV(samples11));
+                outputstreamwriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.i("DataStorage", e.toString());
+            }
+        }
+
+        if (samples12 != null && samples12.size() != 0) {
+            File file12 = new File(dir, filename12);
+
+            try {
+                OutputStreamWriter outputstreamwriter = new OutputStreamWriter(new FileOutputStream(file12, true));
+
+                outputstreamwriter.write(DataSample.toCSV(samples12));
+                outputstreamwriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.i("DataStorage", e.toString());
+            }
+        }
+
+        if (samples13 != null && samples13.size() != 0) {
+            File file13 = new File(dir, filename13);
+
+            try {
+                OutputStreamWriter outputstreamwriter = new OutputStreamWriter(new FileOutputStream(file13, true));
+
+                outputstreamwriter.write(DataSample.toCSV(samples13));
+                outputstreamwriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.i("DataStorage", e.toString());
+            }
+        }
+
+        if (samples14 != null && samples14.size() != 0) {
+            File file14 = new File(dir, filename14);
+
+            try {
+                OutputStreamWriter outputstreamwriter = new OutputStreamWriter(new FileOutputStream(file14, true));
+
+                outputstreamwriter.write(DataSample.toCSV(samples14));
+                outputstreamwriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.i("DataStorage", e.toString());
+            }
+        }
+
+        if (samples15 != null && samples15.size() != 0) {
+            File file15 = new File(dir, filename15);
+
+            try {
+                OutputStreamWriter outputstreamwriter = new OutputStreamWriter(new FileOutputStream(file15, true));
+
+                outputstreamwriter.write(DataSample.toCSV(samples15));
+                outputstreamwriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.i("DataStorage", e.toString());
+            }
+        }
+
+        if (samples16 != null && samples16.size() != 0) {
+            File file16 = new File(dir, filename16);
+
+            try {
+                OutputStreamWriter outputstreamwriter = new OutputStreamWriter(new FileOutputStream(file16, true));
+
+                outputstreamwriter.write(DataSample.toCSV(samples16));
+                outputstreamwriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.i("DataStorage", e.toString());
+            }
+        }
+
         return "saved";
     }
 
@@ -601,4 +799,10 @@ public class DataStorage {
     private ArrayList<DataSample> samples8;
     private ArrayList<DataSample> samples9;
     private ArrayList<DataSample> samples10;
+    private ArrayList<DataSample> samples11;
+    private ArrayList<DataSample> samples12;
+    private ArrayList<DataSample> samples13;
+    private ArrayList<DataSample> samples14;
+    private ArrayList<DataSample> samples15;
+    private ArrayList<DataSample> samples16;
 }

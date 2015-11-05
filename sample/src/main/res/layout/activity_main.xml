@@ -10,7 +10,7 @@
     tools:context="com.andrewgiang.textspritzer.app.MainActivity">
     <!--android:background="@drawable/bgwatch" android:gravity="center"-->
 
-    <ImageView
+   <ImageView
         android:id="@+id/bg"
         android:layout_width="688px"
         android:layout_height="982px"
@@ -21,8 +21,8 @@
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="332px"
-        android:layout_height="384px"
-        android:layout_marginTop="313px"
+        android:layout_height="390px"
+        android:layout_marginTop="300px"
         android:layout_marginLeft="175px"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <ScrollView
@@ -43,10 +43,11 @@
 
         <ProgressBar
             android:id="@+id/spritz_progress"
-            android:layout_width="330px"
+            android:layout_width="300px"
             android:layout_height="20dp"
             android:layout_below="@id/spritzTV"
-            style="?android:attr/progressBarStyleHorizontal" />
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false" />
 
 
             <TextView
@@ -97,15 +98,6 @@
         android:layout_height="wrap_content"
         android:text="B:"
         android:id="@+id/heartIndicater"
-        android:layout_above="@+id/heartData"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="heart data:"
-        android:id="@+id/heartData"
-        android:layout_above="@+id/faceNum"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <TextView
@@ -121,15 +113,6 @@
         android:layout_height="wrap_content"
         android:text="yaw:"
         android:id="@+id/yawVal"
-        android:layout_above="@+id/gazePoint"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="gaze:"
-        android:id="@+id/gazePoint"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

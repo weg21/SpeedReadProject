@@ -168,6 +168,10 @@ public class SpritzerTextView extends TextView implements View.OnClickListener {
         mSpritzer.setWpm(wpm);
     }
 
+    public void setIndex(int index) {
+        mSpritzer.setIndex(index);
+    }
+
 
 
     public void setSpritzer(Spritzer spritzer) {

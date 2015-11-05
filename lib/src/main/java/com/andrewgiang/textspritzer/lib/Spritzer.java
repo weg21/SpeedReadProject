@@ -120,6 +120,17 @@ public class Spritzer {
 
     }
 
+    public void setIndex(int idx){
+        mCurWordIdx=idx;
+        mWordQueue.clear();
+        mWordQueue.addAll(Arrays.asList(mWordArray));
+        for(int i=0;i<mCurWordIdx;i++){
+            if(!mWordQueue.isEmpty()){
+                mWordQueue.remove();
+            }
+        }
+    }
+
 
     public void start() {
         if (mPlaying || mWordArray == null) {
@@ -143,6 +154,8 @@ public class Spritzer {
         mWordQueue.clear();
         mWordQueue.addAll(Arrays.asList(mWordArray));
     }
+
+
 
     private void updateProgress() {
         if (mProgressBar != null) {
